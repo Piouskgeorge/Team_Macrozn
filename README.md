@@ -1,152 +1,108 @@
-MCP Servers Collection
-A comprehensive collection of Model Context Protocol (MCP) servers designed for seamless integration between AI assistants and various external services and APIs. This repository contains Python-based MCP servers for multiple platforms, enabling natural language interaction with standardized interfaces.
-🚀 Overview
-The MCP Servers Collection facilitates interaction between AI models and external services through a unified protocol. Each server is implemented in Python and supports natural language commands for streamlined automation and data processing.
-Included Servers
+# 🚀 MCP Servers Collection
 
-Apify: Web scraping and automation platform
-Garak: LLM vulnerability scanning and safety evaluation
-Glif.app: Workflow automation and execution platform
-HubSpot: CRM and marketing automation platform
+A comprehensive collection of **Model Context Protocol (MCP)** servers designed to seamlessly integrate AI assistants with external services and APIs. This repository contains Python-based MCP servers for various platforms, enabling **natural language interaction** with standardized interfaces.
 
-📋 Table of Contents
+---
 
-Features
-Available Servers
-Quick Start
-Server Details
-Usage Examples
-Common Setup
-Troubleshooting
-Contributing
-License
-Additional Resources
+## 📋 Table of Contents
 
-✨ Features
+- [✨ Features](#-features)  
+- [🔌 Available Servers](#-available-servers)  
+- [🚀 Quick Start](#-quick-start)  
+- [📖 Server Details](#-server-details)  
+- [💡 Usage Examples](#-usage-examples)  
+- [🔧 Common Setup](#-common-setup)  
+- [🛠️ Troubleshooting](#️-troubleshooting)  
+- [🤝 Contributing](#-contributing)  
+- [📜 License](#-license)  
+- [📚 Additional Resources](#-additional-resources)  
 
-Standardized Interface: Consistent API for AI model interactions across services
-Natural Language Processing: Leverage Azure OpenAI for intuitive command handling
-Modular Architecture: Easily extensible for new services and platforms
-Comprehensive Documentation: Detailed guides and examples for each server
-Error Handling: Robust error management and recovery mechanisms
-Community-Driven: Open for contributions to add new servers or enhance existing ones
+---
 
-🔌 Available Servers
+## ✨ Features
 
+- **Standardized Interface** – Consistent API format across all services  
+- **Natural Language Support** – Azure OpenAI-powered command processing  
+- **Modular Architecture** – Add new services with minimal changes  
+- **Comprehensive Docs** – Step-by-step instructions and examples  
+- **Robust Error Handling** – Recovery from common runtime issues  
+- **Community-Driven** – Open to contributions and server extensions  
 
+---
 
-Server
-Description
-Status
-Language
+## 🔌 Available Servers
 
+| Server     | Description                                   | Status | Language |
+|------------|-----------------------------------------------|--------|----------|
+| Apify      | Web scraping and Instagram automation         | ✅ Active | Python   |
+| Garak      | LLM vulnerability scanning and safety eval.   | ✅ Active | Python   |
+| Glif.app   | Workflow automation and execution             | ✅ Active | Python   |
+| HubSpot    | CRM, deals, contacts, marketing automation    | ✅ Active | Python   |
 
+---
 
-Apify
-Web scraping, Instagram scraping, and automation tools
-✅ Active
-Python
+## 🚀 Quick Start
 
+### 🔧 Prerequisites
 
-Garak
-LLM vulnerability scanning and safety evaluation
-✅ Active
-Python
+- Python 3.8+  
+- `pip` package manager  
+- Azure OpenAI Account  
+- Service-specific API keys  
 
+### 📦 Installation Steps
 
-Glif.app
-Workflow automation and execution platform
-✅ Active
-Python
-
-
-HubSpot
-CRM, contacts, deals, and marketing automation
-✅ Active
-Python
-
-
-🚀 Quick Start
-Prerequisites
-
-Python 3.8+
-pip package manager
-Azure OpenAI Account (required for most servers)
-Service-specific API keys (refer to individual server documentation)
-
-Installation Steps
-
-Clone the repository:
+\`\`\`bash
+# Clone the repository
 git clone https://github.com/Piouskgeorge/Team_Macrozn.git
 cd mcp-servers-collection
 
-
-Navigate to the server directory:
+# Navigate to desired server directory
 cd mcp_servers/[server_name]
 
-
-Install dependencies:
+# Install dependencies
 pip install -r requirements.txt
 
-
-Configure environment variables:
-# Common variables (check individual READMEs for specifics)
+# Set up environment variables
 export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
 export AZURE_OPENAI_API_KEY="your-azure-api-key"
 export AZURE_OPENAI_MODEL="gpt4o"
 
-
-Start the server:
+# Start the server
 python server.py
 # or
 python main.py
+\`\`\`
 
+---
 
+## 📖 Server Details
 
-📖 Server Details
-🔧 Apify MCP Server
-Purpose: Integrates with Apify for web scraping, Instagram data extraction, and automation.
-Key Features:
+### 🔧 Apify MCP Server
 
-Instagram profile and post scraping
-Web scraping with Cheerio and Web Scraper actors
-Dataset and key-value store management
-Actor and task execution
-Enhanced logging and error handling
+- **Purpose**: Web & Instagram scraping, automation  
+- **Key Tools**:  
+  - \`run_actor\`, \`run_task\`  
+  - \`get_datasets\`, \`get_key_value_stores\`  
+  - \`list_available_actors\`  
 
-Tools Available:
-
-run_actor: Execute Apify actors
-run_task: Execute Apify tasks
-get_datasets: Retrieve datasets
-get_key_value_stores: Manage key-value stores
-list_available_actors: Browse available actors
-
-Setup:
+\`\`\`bash
 cd apify
 pip install -r requirements.txt
 export APIFY_API_KEY="your_apify_api_key_here"
 python start_conversation.py
+\`\`\`
 
-🛡️ Garak MCP Server
-Purpose: Facilitates LLM vulnerability scanning and safety evaluation using the Garak framework.
-Key Features:
+---
 
-AI research assistant with safety checks
-Comprehensive vulnerability assessments
-Support for multiple probes (e.g., prompt injection, jailbreaks)
-Azure OpenAI integration
-Conversation history management
+### 🛡️ Garak MCP Server
 
-Tools Available:
+- **Purpose**: LLM safety evaluations and vulnerability scanning  
+- **Key Tools**:  
+  - \`ask_research_agent\`, \`run_safety_evaluation\`  
+  - \`get_agent_history\`, \`reset_agent\`, \`update_agent_role\`  
 
-ask_research_agent: Query the AI research assistant
-run_safety_evaluation: Perform Garak safety evaluations
-get_agent_history: Retrieve conversation history
-reset_agent: Clear conversation history
-update_agent_role: Modify agent role/system prompt
-
-Setup:
+\`\`\`bash
 cd garak_mcp
 pip install -r requirements.txt
 pip install garak
@@ -154,27 +110,18 @@ export AZURE_ENDPOINT="https://your-endpoint.openai.azure.com/"
 export AZURE_API_KEY="your-api-key"
 export AZURE_MODEL_NAME="gpt4o"
 python server.py
+\`\`\`
 
-🔄 Glif.app MCP Server
-Purpose: Enables workflow automation and execution through Glif.app.
-Key Features:
+---
 
-Workflow creation and management
-Execution with diverse input types
-User management and profile access
-Run tracking and result monitoring
-Sphere and collection browsing
+### 🔄 Glif.app MCP Server
 
-Tools Available:
+- **Purpose**: Workflow automation through Glif.app  
+- **Key Tools**:  
+  - \`get_glif\`, \`list_glifs\`, \`run_glif\`  
+  - \`get_run\`, \`list_runs\`, \`get_user_info\`  
 
-get_glif: Fetch specific glif by ID
-list_glifs: List glifs with filtering options
-run_glif: Execute glif workflows
-get_run: Retrieve run details
-list_runs: List runs with filters
-get_user_info: Access user information
-
-Setup:
+\`\`\`bash
 cd glif_mcp
 pip install -r requirements.txt
 export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
@@ -182,164 +129,143 @@ export AZURE_OPENAI_API_KEY="your-azure-api-key"
 export AZURE_OPENAI_MODEL="gpt4o"
 export GLIF_API_TOKEN="your_glif_api_token_here"
 python start_conversation.py
+\`\`\`
 
-📊 HubSpot MCP Server
-Purpose: Integrates with HubSpot for CRM, contacts, deals, and marketing automation.
-Key Features:
+---
 
-Contact creation and management
-Deal tracking and updates
-Cart management for e-commerce
-Azure OpenAI-powered natural language processing
-Modular design for extensibility
+### 📊 HubSpot MCP Server
 
-Tools Available:
+- **Purpose**: CRM operations like contacts, deals, and cart management  
+- **Key Tools**:  
+  - \`create_contact\`, \`update_deal\`, \`cart_operations\`  
 
-Contact creation and management
-Deal tracking and updates
-Cart operations
-User information retrieval
-
-Setup:
+\`\`\`bash
 cd HUBSPOT_MCP
 pip install -r requirements.txt
-# Create .env file with HubSpot and Azure OpenAI credentials
+# Add environment variables in a \`.env\` file
 python -m servers.HUBSPOT_MCP.main
+\`\`\`
 
-💡 Usage Examples
-Apify - Instagram Scraping
-# Scrape Instagram profile
-"Scrape the Instagram profile of 'nike'"
+---
 
-# Get posts with hashtag
-"Get posts with hashtag 'travel', limit to 5"
+## 💡 Usage Examples
 
-# Web scraping
-"Scrape the first paragraph from https://example.com"
+### 🕸️ Apify
 
-Garak - Safety Evaluation
-# Ask research question
-"What are the latest developments in AI safety?"
+- "Scrape the Instagram profile of 'nike'"  
+- "Get posts with hashtag 'travel', limit to 5"  
+- "Scrape the first paragraph from https://example.com"  
 
-# Run safety evaluation
-"Run Garak safety evaluation on GPT-4 with prompt injection probes"
+### 🧪 Garak
 
-# Update agent role
-"Update the agent to be a cybersecurity expert"
+- "What are the latest developments in AI safety?"  
+- "Run Garak safety evaluation on GPT-4 with prompt injection probes"  
+- "Update the agent to be a cybersecurity expert"  
 
-Glif.app - Workflow Management
-# List featured glifs
-"Show me featured glifs"
+### ⚙️ Glif.app
 
-# Run a glif
-"Run glif abc123 with inputs ['hello', 'world']"
+- "Show me featured glifs"  
+- "Run glif abc123 with inputs ['hello', 'world']"  
+- "Get information about user 'john_doe'"  
 
-# Get user information
-"Get information about user 'john_doe'"
+### 📇 HubSpot
 
-HubSpot - CRM Operations
-# Create contact
-"Create a new contact for John Doe with email john@example.com"
+- "Create a new contact for John Doe with email john@example.com"  
+- "Update deal status to 'Closed Won'"  
+- "Get contact details for john@example.com"  
 
-# Update deal
-"Update deal status to 'Closed Won'"
+---
 
-# Get contact information
-"Get contact details for john@example.com"
+## 🔧 Common Setup
 
-🔧 Common Setup
-Environment Variables
-Most servers require these environment variables:
-# Azure OpenAI (required for most servers)
+### 🌍 Environment Variables
+
+\`\`\`bash
+# Azure OpenAI (Required for all)
 export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
 export AZURE_OPENAI_API_KEY="your-azure-api-key"
 export AZURE_OPENAI_MODEL="gpt4o"
 
-# Service-specific API keys
+# Service-specific
 export APIFY_API_KEY="your_apify_api_key_here"
 export GLIF_API_TOKEN="your_glif_api_token_here"
 export HUBSPOT_API_KEY="your_hubspot_api_key_here"
+\`\`\`
 
-Directory Structure
-Each server follows a consistent structure:
+### 🗂 Directory Structure
+
+\`\`\`
 [server_name]/
-├── server/              # Server implementation
-├── client/              # Client implementation
-├── requirements.txt     # Python dependencies
-├── README.md           # Detailed documentation
-└── [config files]      # Configuration files
+├── server/              # Server logic
+├── client/              # Client logic (optional)
+├── requirements.txt     # Dependencies
+├── README.md            # Server-specific docs
+└── [config files]       # Configuration
+\`\`\`
 
-🛠️ Troubleshooting
-Common Issues
+---
 
-Import Errors:
-pip install -r requirements.txt
+## 🛠️ Troubleshooting
 
+### Common Issues & Fixes
 
-API Key Issues:
+- **Import Errors**  
+  \`pip install -r requirements.txt\`
 
-Verify environment variables are correctly set
-Check API key permissions and quotas
-Ensure API keys are not expired
+- **API Key Errors**  
+  - Ensure all API keys are set and valid  
+  - Check key quotas and scopes  
 
+- **Azure OpenAI Errors**  
+  - Verify endpoint and model deployment  
+  - Check permissions  
 
-Azure OpenAI Connection:
+- **Server-Specific Issues**  
+  - See individual README files  
+  - Refer to official API docs  
 
-Confirm endpoint URL accuracy
-Verify API key permissions
-Ensure model name is available in your deployment
+---
 
+## 🤝 Contributing
 
-Service-specific Issues:
+We welcome your contributions!
 
-Consult individual server README files
-Review service API documentation
-Verify account permissions and quotas
+### Add a New Server
 
+1. Create a new folder in \`mcp_servers/\`:
+   \`\`\`
+   mcp_servers/
+   └── your_new_server/
+       ├── server/
+       ├── client/
+       ├── requirements.txt
+       ├── README.md
+       └── config/
+   \`\`\`
 
+2. Update the main README and add:
+   - Documentation in \`mcp_servers_documentation/\`  
+   - Postman collection in \`postman_api_collections/\`  
 
-Getting Help
+### Dev Guidelines
 
-Check individual server README files for detailed guidance
-Explore the mcp_servers_documentation/ directory for comprehensive guides
-Use provided Postman collections in postman_api_collections/ for API testing
+- Follow PEP 8  
+- Use meaningful error messages  
+- Add usage examples  
+- Keep consistent structure  
 
-🤝 Contributing
-We welcome contributions to enhance existing servers or add new ones!
-Adding New Servers
+---
 
-Create a new directory in mcp_servers/
+## 📜 License
 
-Follow the standard structure:
-[new_server]/
-├── server/
-├── client/
-├── requirements.txt
-├── README.md
-└── [config files]
+This project is licensed under the **MIT License**.  
+See the [LICENSE](./LICENSE) file for more details.
 
+---
 
-Update this main README with server details
+## 📚 Additional Resources
 
-Add documentation to mcp_servers_documentation/
-
-Create a Postman collection in postman_api_collections/
-
-
-Development Guidelines
-
-Adhere to Python PEP 8 style guidelines
-Implement comprehensive error handling
-Provide clear, concise documentation
-Include example usage and testing scripts
-Maintain consistent code formatting
-
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-📚 Additional Resources
-
-Main Project README: Overview of the project
-MCP Servers Documentation: Detailed server guides
-Postman Collections: API testing collections
-Model Context Protocol: Official MCP documentation
-Issue Tracker: Report bugs or suggest features
+- **Main Project README** – Overview of the repository  
+- **MCP Servers Documentation** – Detailed per-server docs  
+- **Postman Collections** – Ready-made API test scripts  
+- **Model Context Protocol Docs** – Official specifications  

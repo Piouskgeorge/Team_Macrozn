@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "hubspot-mcp-collection-001",
+    "name": "HubSpot MCP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Contacts",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"list_contacts\",\n  \"parameters\": {\n    \"limit\": 5\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"create_contact\",\n  \"parameters\": {\n    \"firstname\": \"Naveen\",\n    \"lastname\": \"Kumar\",\n    \"email\": \"naveen@example.com\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Contact",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"get_contact\",\n  \"parameters\": {\n    \"email\": \"naveen@example.com\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Deals",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"list_deals\",\n  \"parameters\": {\n    \"limit\": 5\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"create_cart\",\n  \"parameters\": {\n    \"name\": \"naveen@example.com\",\n    \"status\": \"new\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Carts",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tool\": \"list_carts\",\n  \"parameters\": {\n    \"limit\": 5\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/v1/mcp/process_message",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "v1", "mcp", "process_message"]
+        }
+      },
+      "response": []
+    }
+  ]
+} 

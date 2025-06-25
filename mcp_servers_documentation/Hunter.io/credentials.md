@@ -1,0 +1,4 @@
+HUNTER_API_KEY=bddd3a091f970542d2c1a31690744058822071c4
+AZURE_ENDPOINT=https://opeanai-eastus.openai.azure.com/
+API_KEY=a00d081fe4b849beb5b5c0c4ed8d837f
+MODEL=gpt4o

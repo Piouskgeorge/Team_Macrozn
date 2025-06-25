@@ -1,0 +1,345 @@
+{
+    "info": {
+        "name": "Glif API Collection",
+        "_postman_id": "7b9e3f4a-9c2d-4e1f-a8b7-2f8c6d7e9b1a",
+        "description": "Collection for testing Glif API endpoints used by glif_mcp_server.py",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get Glif",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/glifs?id={{glif_id}}&includes=spells.data",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "glifs"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "{{glif_id}}"
+                        },
+                        {
+                            "key": "includes",
+                            "value": "spells.data"
+                        }
+                    ]
+                },
+                "description": "Fetch a specific glif by ID with optional graph data"
+            }
+        },
+        {
+            "name": "List Glifs",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/glifs?featured=1&page=1&limit=20",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "glifs"
+                    ],
+                    "query": [
+                        {
+                            "key": "featured",
+                            "value": "1"
+                        },
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "20"
+                        }
+                    ]
+                },
+                "description": "List glifs with optional filters"
+            }
+        },
+        {
+            "name": "Run Glif",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"id\": \"{{glif_id}}\",\n  \"inputs\": [],\n  \"visibility\": \"PRIVATE\"\n}"
+                },
+                "url": {
+                    "raw": "{{GLIF_SIMPLE_API}}?strict=1",
+                    "host": [
+                        "{{GLIF_SIMPLE_API}}"
+                    ],
+                    "query": [
+                        {
+                            "key": "strict",
+                            "value": "1"
+                        }
+                    ]
+                },
+                "description": "Execute a glif using the Simple API"
+            }
+        },
+        {
+            "name": "Get Run",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/runs?id={{run_id}}",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "runs"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "{{run_id}}"
+                        }
+                    ]
+                },
+                "description": "Fetch details of a specific run"
+            }
+        },
+        {
+            "name": "List Runs",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/runs?page=1&limit=20",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "runs"
+                    ],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "20"
+                        }
+                    ]
+                },
+                "description": "List runs with optional filters"
+            }
+        },
+        {
+            "name": "Get User Info",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/user?username={{username}}",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "user"
+                    ],
+                    "query": [
+                        {
+                            "key": "username",
+                            "value": "{{username}}"
+                        }
+                    ]
+                },
+                "description": "Get information about a user"
+            }
+        },
+        {
+            "name": "Get Me",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/me",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "me"
+                    ]
+                },
+                "description": "Get information about the authenticated user"
+            }
+        },
+        {
+            "name": "List Spheres",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/spheres",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "spheres"
+                    ]
+                },
+                "description": "List all public spheres (collections)"
+            }
+        },
+        {
+            "name": "Create Glif",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{GLIF_API_TOKEN}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Test Glif\",\n  \"description\": \"A test glif created via API\",\n  \"graph\": {}\n}"
+                },
+                "url": {
+                    "raw": "{{GLIF_API_BASE}}/glifs",
+                    "host": [
+                        "{{GLIF_API_BASE}}"
+                    ],
+                    "path": [
+                        "glifs"
+                    ]
+                },
+                "description": "Create a new glif"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "GLIF_API_BASE",
+            "value": "https://glif.app/api"
+        },
+        {
+            "key": "GLIF_SIMPLE_API",
+            "value": "https://simple-api.glif.app"
+        },
+        {
+            "key": "GLIF_API_TOKEN",
+            "value": "your_api_token_here"
+        },
+        {
+            "key": "glif_id",
+            "value": "your_glif_id_here"
+        },
+        {
+            "key": "run_id",
+            "value": "your_run_id_here"
+        },
+        {
+            "key": "username",
+            "value": "your_username_here"
+        }
+    ]
+}

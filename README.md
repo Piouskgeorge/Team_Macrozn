@@ -1,304 +1,345 @@
-# Vanij MCP Platform
+MCP Servers Collection
+A comprehensive collection of Model Context Protocol (MCP) servers designed for seamless integration between AI assistants and various external services and APIs. This repository contains Python-based MCP servers for multiple platforms, enabling natural language interaction with standardized interfaces.
+🚀 Overview
+The MCP Servers Collection facilitates interaction between AI models and external services through a unified protocol. Each server is implemented in Python and supports natural language commands for streamlined automation and data processing.
+Included Servers
 
-## 🚀 [MCP Integration Demo Video. (watch here)](https://drive.google.com/file/d/14JvBERtsT1ed1Db5GCDLllqdW5BL684S/view?usp=sharing)
+Apify: Web scraping and automation platform
+Garak: LLM vulnerability scanning and safety evaluation
+Glif.app: Workflow automation and execution platform
+HubSpot: CRM and marketing automation platform
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-20%2B-green.svg)](https://nodejs.org/)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+📋 Table of Contents
 
-A comprehensive Model Context Protocol (MCP) platform providing standardized integrations between AI assistants and various services and APIs. This repository contains both JavaScript and Python implementations of MCP servers and clients for seamless service integration.
+Features
+Available Servers
+Quick Start
+Server Details
+Usage Examples
+Common Setup
+Troubleshooting
+Contributing
+License
+Additional Resources
 
-## 📋 Table of Contents
+✨ Features
 
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Quick Start](#quick-start)
-- [JavaScript Setup](#javascript-setup)
-- [Python Setup](#python-setup)
-- [Sample MCP Servers](#sample-mcp-servers)
-- [Configuration](#configuration)
-- [Documentation](#documentation)
-- [API Collections](#api-collections)
-- [Contributing](#contributing)
-- [License](#license)
+Standardized Interface: Consistent API for AI model interactions across services
+Natural Language Processing: Leverage Azure OpenAI for intuitive command handling
+Modular Architecture: Easily extensible for new services and platforms
+Comprehensive Documentation: Detailed guides and examples for each server
+Error Handling: Robust error management and recovery mechanisms
+Community-Driven: Open for contributions to add new servers or enhance existing ones
 
-## 🌟 Overview
+🔌 Available Servers
 
-The Vanij MCP Platform enables AI assistants to interact with external services through a standardized protocol. It provides a unified interface for connecting to various APIs and services, making it easier to build sophisticated AI-powered applications.
 
-## ✨ Features
 
-- **Multi-language Support**: JavaScript and Python implementations
-- **Extensible Architecture**: Easy to add new MCP servers
-- **Standardized Protocol**: Consistent interface across all integrations
-- **Production Ready**: Built with scalability and reliability in mind
-- **Comprehensive Documentation**: Detailed guides and API references
-- **Testing Tools**: Postman collections for easy testing
+Server
+Description
+Status
+Language
 
-## 📁 Project Structure
 
-```
-.
-├── mcp_servers/
-│   ├── js/                           # JavaScript implementation
-│   │   ├── clients/                  # MCP clients
-│   │   │   ├── src/
-│   │   │   │   ├── client_and_server_config.ts  # Listed MCP Clients & Servers Configurations.
-│   │   │   │   └── ...
-│   │   │   ├── package.json   
-│   │   │   └── ...
-│   │   ├── servers/                  # MCP servers
-│   │   │   ├── WORDPRESS/           # WordPress integration
-│   │   │   ├── ZOOMMCP/             # Zoom integration
-│   │   │   ├── SALESFORCE_MCP/      # Salesforce integration
-│   │   │   ├── SLACK_MCP/           # Slack integration
-│   │   │   └── etc...
-│   │   └── package.json
-│   └── python/                       # Python implementation
-│       ├── clients/                  # MCP clients
-│       │   ├── src/
-│       │   │   ├── client_and_server_config.py       # Listed MCP Clients & Servers Configurations.
-│       │   │   └── ...
-│       │   ├── requirements.txt
-│       │   └── ...
-│       └── servers/                  # MCP servers
-│           ├── MCP-GSUITE/          # GSuite integration
-│           ├── FACEBOOK_MCP/        # Facebook integration
-│           ├── FACEBOOK_ADS_MCP/    # Facebook Ads integration
-│           ├── POWER_BI_MCP/        # Power BI integration
-│           └── etc ...
-├── mcp_servers_documentation/        # Detailed documentation of about MCP servers
-├── postman_api_collections/         # API testing collections
-└── README.md
-```
 
-## 🚀 Quick Start
+Apify
+Web scraping, Instagram scraping, and automation tools
+✅ Active
+Python
 
-### Prerequisites
 
-- **Node.js**208+ (for JavaScript implementation)
-- **Python** 3.8+ (for Python implementation)
-- **npm** or **yarn** (for JavaScript dependencies)
-- **pip** (for Python dependencies)
+Garak
+LLM vulnerability scanning and safety evaluation
+✅ Active
+Python
 
-### Choose Your Implementation
 
-1. **JavaScript**: Follow the [JavaScript Setup](#javascript-setup) guide
-2. **Python**: Follow the [Python Setup](#python-setup) guide
-3. **Both**: Set up both implementations for maximum flexibility
+Glif.app
+Workflow automation and execution platform
+✅ Active
+Python
 
-## 🟨 JavaScript Setup
 
-### 1. Navigate to JavaScript Directory
+HubSpot
+CRM, contacts, deals, and marketing automation
+✅ Active
+Python
 
-```bash
-cd mcp_servers/js
-```
 
-### 2. Install Dependencies
+🚀 Quick Start
+Prerequisites
 
-```bash
-npm install
-```
+Python 3.8+
+pip package manager
+Azure OpenAI Account (required for most servers)
+Service-specific API keys (refer to individual server documentation)
 
-### 3. Build All Components
+Installation Steps
 
-```bash
-npm run build:all
-```
+Clone the repository:
+git clone https://github.com/Piouskgeorge/Team_Macrozn.git
+cd mcp-servers-collection
 
-### 4. Start Development Server
 
-```bash
-npm run dev:client
-```
+Navigate to the server directory:
+cd mcp_servers/[server_name]
 
-### 5. Available Scripts
 
-- `npm run build:all` - Build all clients and servers
-- `npm run dev:client` - Run client in development mode
-- `npm run test` - Run test suite
-- `npm run lint` - Run linting checks
-
-### Configuration
-
-JavaScript configuration is managed in:
-```
-mcp_servers/js/clients/src/client_and_server_config.ts
-```
-
-## 🐍 Python Setup
-
-### 1. Navigate to Python Directory
-
-```bash
-cd mcp_servers/python/clients
-```
-
-### 2. Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate Virtual Environment
-
-**Windows:**
-```bash
-venv\Scripts\activate
-```
-
-**Unix/MacOS:**
-```bash
-source venv/bin/activate
-```
-
-### 4. Install Dependencies
-
-```bash
+Install dependencies:
 pip install -r requirements.txt
-```
 
-This command automatically installs all server dependencies as well.
 
-### 5. Run the Client
+Configure environment variables:
+# Common variables (check individual READMEs for specifics)
+export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
+export AZURE_OPENAI_API_KEY="your-azure-api-key"
+export AZURE_OPENAI_MODEL="gpt4o"
 
-```bash
-python src/main.py
-```
 
-### Configuration
+Start the server:
+python server.py
+# or
+python main.py
 
-Python configuration is managed in:
-```
-mcp_servers/python/clients/src/client_and_server_config.py
-```
 
-## 🔌 Example MCP Servers
 
-### JavaScript Implementation
+📖 Server Details
+🔧 Apify MCP Server
+Purpose: Integrates with Apify for web scraping, Instagram data extraction, and automation.
+Key Features:
 
-| Server | Description | Status |
-|--------|-------------|--------|
-| **WordPress** | Content management and blog operations | ✅ Active |
-| **Zoom** | Video conferencing and meeting management | ✅ Active |
-| **Salesforce** | CRM and sales automation | ✅ Active |
-| **Slack** | Team communication and collaboration | ✅ Active |
-| **Jira** | Project management and issue tracking | ✅ Active |
-| **Google Drive** | Cloud storage and file management | ✅ Active |
-| **Zendesk** | Customer support and ticketing | ✅ Active |
-| **HubSpot** | Marketing and CRM platform | ✅ Active |
+Instagram profile and post scraping
+Web scraping with Cheerio and Web Scraper actors
+Dataset and key-value store management
+Actor and task execution
+Enhanced logging and error handling
 
-### Python Implementation
+Tools Available:
 
-| Server | Description | Status |
-|--------|-------------|--------|
-| **GSuite** | Google Workspace integration | ✅ Active |
-| **Facebook** | Social media platform integration | ✅ Active |
-| **Facebook Ads** | Advertising and campaign management | ✅ Active |
-| **Power BI** | Business intelligence and analytics | ✅ Active |
+run_actor: Execute Apify actors
+run_task: Execute Apify tasks
+get_datasets: Retrieve datasets
+get_key_value_stores: Manage key-value stores
+list_available_actors: Browse available actors
 
-## ⚙️ Configuration
+Setup:
+cd apify
+pip install -r requirements.txt
+export APIFY_API_KEY="your_apify_api_key_here"
+python start_conversation.py
 
-### JavaScript Configuration
+🛡️ Garak MCP Server
+Purpose: Facilitates LLM vulnerability scanning and safety evaluation using the Garak framework.
+Key Features:
 
-Edit `mcp_servers/js/clients/src/client_and_server_config.ts`:
+AI research assistant with safety checks
+Comprehensive vulnerability assessments
+Support for multiple probes (e.g., prompt injection, jailbreaks)
+Azure OpenAI integration
+Conversation history management
 
-```typescript
-export const ServersConfig = [
-    {
-        server_name :"WORDPRESS", // Server Name should be same as the folder name in mcp_servers/js/servers/ folder.
-        server_features_and_capability:`wordpress server is used to create, update, delete and get content from wordpress website.`,
-        path : "build/index.js"
-    },
-    {
-        server_name :"User MCP Server Name",   
-        server_features_and_capability:`feactures description`,
-        path : "dist/index.js" // path should be the build file path in the mcp Server under the folder name
-    },
-];
-```
+Tools Available:
 
-### Python Configuration
+ask_research_agent: Query the AI research assistant
+run_safety_evaluation: Perform Garak safety evaluations
+get_agent_history: Retrieve conversation history
+reset_agent: Clear conversation history
+update_agent_role: Modify agent role/system prompt
 
-Edit `mcp_servers/python/clients/src/client_and_server_config.py`:
+Setup:
+cd garak_mcp
+pip install -r requirements.txt
+pip install garak
+export AZURE_ENDPOINT="https://your-endpoint.openai.azure.com/"
+export AZURE_API_KEY="your-api-key"
+export AZURE_MODEL_NAME="gpt4o"
+python server.py
 
-```python
-ServersConfig = [
-    {
-		"server_name": "MCP-GSUITE",
-		"command":"uv",
-		"args": [
-			"--directory",
-			"../servers/MCP-GSUITE/mcp-gsuite",
-			"run",
-			"mcp-gsuite"
-		]
-	},
-    //other servers...
-]
-```
+🔄 Glif.app MCP Server
+Purpose: Enables workflow automation and execution through Glif.app.
+Key Features:
 
-## 📚 Documentation
+Workflow creation and management
+Execution with diverse input types
+User management and profile access
+Run tracking and result monitoring
+Sphere and collection browsing
 
-Comprehensive documentation for each MCP server is available in the `mcp_servers_documentation/` directory:
+Tools Available:
 
-- Server-specific setup guides
-- API reference documentation
-- Integration examples
-- Troubleshooting guides
+get_glif: Fetch specific glif by ID
+list_glifs: List glifs with filtering options
+run_glif: Execute glif workflows
+get_run: Retrieve run details
+list_runs: List runs with filters
+get_user_info: Access user information
 
-### Key Documentation Files
+Setup:
+cd glif_mcp
+pip install -r requirements.txt
+export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
+export AZURE_OPENAI_API_KEY="your-azure-api-key"
+export AZURE_OPENAI_MODEL="gpt4o"
+export GLIF_API_TOKEN="your_glif_api_token_here"
+python start_conversation.py
 
-- `mcp_servers_documentation/server_setup.md` - General server setup
-- `mcp_servers_documentation/api_reference.md` - API documentation
-- `mcp_servers_documentation/examples/` - Integration examples
+📊 HubSpot MCP Server
+Purpose: Integrates with HubSpot for CRM, contacts, deals, and marketing automation.
+Key Features:
 
-## 🧪 API Collections
+Contact creation and management
+Deal tracking and updates
+Cart management for e-commerce
+Azure OpenAI-powered natural language processing
+Modular design for extensibility
 
-The `postman_api_collections/` directory contains Postman collections for testing and interacting with MCP servers:
+Tools Available:
 
-1. Import collections into Postman
-2. Configure environment variables
-3. Test API endpoints
-4. Validate integrations
+Contact creation and management
+Deal tracking and updates
+Cart operations
+User information retrieval
 
-## 🤝 Contributing
+Setup:
+cd HUBSPOT_MCP
+pip install -r requirements.txt
+# Create .env file with HubSpot and Azure OpenAI credentials
+python -m servers.HUBSPOT_MCP.main
 
-We welcome contributions! Please follow these steps:
+💡 Usage Examples
+Apify - Instagram Scraping
+# Scrape Instagram profile
+"Scrape the Instagram profile of 'nike'"
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+# Get posts with hashtag
+"Get posts with hashtag 'travel', limit to 5"
 
-### Development Guidelines
+# Web scraping
+"Scrape the first paragraph from https://example.com"
 
-- Follow existing code style and conventions
-- Add tests for new features
-- Update documentation as needed
-- Ensure all tests pass before submitting PR
+Garak - Safety Evaluation
+# Ask research question
+"What are the latest developments in AI safety?"
 
-## 📄 License
+# Run safety evaluation
+"Run Garak safety evaluation on GPT-4 with prompt injection probes"
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+# Update agent role
+"Update the agent to be a cybersecurity expert"
 
-## 🆘 Support
+Glif.app - Workflow Management
+# List featured glifs
+"Show me featured glifs"
 
-- **Documentation**: Check the `mcp_servers_documentation/` directory
-- **Issues**: Open an issue on GitHub
-- **Discussions**: Use GitHub Discussions for questions
+# Run a glif
+"Run glif abc123 with inputs ['hello', 'world']"
 
-## 🏗️ Roadmap
+# Get user information
+"Get information about user 'john_doe'"
 
-- [ ] Additional language implementations (Go, Rust)
-- [ ] More third-party service integrations
-- [ ] Enhanced monitoring and logging
-- [ ] Docker containerization
-- [ ] Kubernetes deployment guides
+HubSpot - CRM Operations
+# Create contact
+"Create a new contact for John Doe with email john@example.com"
 
----
+# Update deal
+"Update deal status to 'Closed Won'"
 
-**Built with ❤️ by the Vanij Team**
+# Get contact information
+"Get contact details for john@example.com"
+
+🔧 Common Setup
+Environment Variables
+Most servers require these environment variables:
+# Azure OpenAI (required for most servers)
+export AZURE_OPENAI_ENDPOINT="https://your-endpoint.openai.azure.com/"
+export AZURE_OPENAI_API_KEY="your-azure-api-key"
+export AZURE_OPENAI_MODEL="gpt4o"
+
+# Service-specific API keys
+export APIFY_API_KEY="your_apify_api_key_here"
+export GLIF_API_TOKEN="your_glif_api_token_here"
+export HUBSPOT_API_KEY="your_hubspot_api_key_here"
+
+Directory Structure
+Each server follows a consistent structure:
+[server_name]/
+├── server/              # Server implementation
+├── client/              # Client implementation
+├── requirements.txt     # Python dependencies
+├── README.md           # Detailed documentation
+└── [config files]      # Configuration files
+
+🛠️ Troubleshooting
+Common Issues
+
+Import Errors:
+pip install -r requirements.txt
+
+
+API Key Issues:
+
+Verify environment variables are correctly set
+Check API key permissions and quotas
+Ensure API keys are not expired
+
+
+Azure OpenAI Connection:
+
+Confirm endpoint URL accuracy
+Verify API key permissions
+Ensure model name is available in your deployment
+
+
+Service-specific Issues:
+
+Consult individual server README files
+Review service API documentation
+Verify account permissions and quotas
+
+
+
+Getting Help
+
+Check individual server README files for detailed guidance
+Explore the mcp_servers_documentation/ directory for comprehensive guides
+Use provided Postman collections in postman_api_collections/ for API testing
+
+🤝 Contributing
+We welcome contributions to enhance existing servers or add new ones!
+Adding New Servers
+
+Create a new directory in mcp_servers/
+
+Follow the standard structure:
+[new_server]/
+├── server/
+├── client/
+├── requirements.txt
+├── README.md
+└── [config files]
+
+
+Update this main README with server details
+
+Add documentation to mcp_servers_documentation/
+
+Create a Postman collection in postman_api_collections/
+
+
+Development Guidelines
+
+Adhere to Python PEP 8 style guidelines
+Implement comprehensive error handling
+Provide clear, concise documentation
+Include example usage and testing scripts
+Maintain consistent code formatting
+
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+📚 Additional Resources
+
+Main Project README: Overview of the project
+MCP Servers Documentation: Detailed server guides
+Postman Collections: API testing collections
+Model Context Protocol: Official MCP documentation
+Issue Tracker: Report bugs or suggest features

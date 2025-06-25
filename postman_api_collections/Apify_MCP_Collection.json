@@ -1,0 +1,913 @@
+{
+    "info": {
+        "_postman_id": "apify-mcp-collection",
+        "name": "Apify MCP Server Collection",
+        "description": "Comprehensive Postman collection for Apify MCP Server with all available tools and endpoints for web scraping automation.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "apify-mcp"
+    },
+    "item": [
+        {
+            "name": "🧠 Actors - Core Agent Work",
+            "item": [
+                {
+                    "name": "Run Actor (Async)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_actor\",\n    \"arguments\": {\n      \"actor_id\": \"apify/instagram-scraper\",\n      \"run_input\": {\n        \"directUrls\": [\"https://www.instagram.com/username/\"],\n        \"resultsType\": \"details\",\n        \"resultsLimit\": 10\n      },\n      \"timeout_secs\": 300,\n      \"memory_mbytes\": 2048\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify actor asynchronously and return run information."
+                    }
+                },
+                {
+                    "name": "Run Actor (Sync)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_actor_sync\",\n    \"arguments\": {\n      \"actor_id\": \"apify/instagram-scraper\",\n      \"run_input\": {\n        \"directUrls\": [\"https://www.instagram.com/username/\"],\n        \"resultsType\": \"details\",\n        \"resultsLimit\": 5\n      },\n      \"timeout_secs\": 300\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify actor synchronously and return the output data."
+                    }
+                },
+                {
+                    "name": "Run Actor with Dataset",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_actor_sync_get_dataset\",\n    \"arguments\": {\n      \"actor_id\": \"apify/instagram-scraper\",\n      \"run_input\": {\n        \"directUrls\": [\"https://www.instagram.com/username/\"],\n        \"resultsType\": \"details\",\n        \"resultsLimit\": 10\n      },\n      \"timeout_secs\": 300,\n      \"limit\": 5\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify actor synchronously and return dataset items with optional limit."
+                    }
+                },
+                {
+                    "name": "Get Actor Run",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_actor_run\",\n    \"arguments\": {\n      \"run_id\": \"{{run_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get details of a specific actor run."
+                    }
+                },
+                {
+                    "name": "Get Last Actor Run",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_last_actor_run\",\n    \"arguments\": {\n      \"actor_id\": \"apify/instagram-scraper\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get the last run of a specific actor."
+                    }
+                },
+                {
+                    "name": "Abort Actor Run",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"abort_actor_run\",\n    \"arguments\": {\n      \"run_id\": \"{{run_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Abort a running actor."
+                    }
+                },
+                {
+                    "name": "List Available Actors",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"list_available_actors\",\n    \"arguments\": {\n      \"limit\": 50,\n      \"offset\": 0,\n      \"my\": false,\n      \"desc\": true\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "List available actors with pagination and filtering options."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "📋 Tasks - Scheduled Workflows",
+            "item": [
+                {
+                    "name": "Run Task (Async)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_task\",\n    \"arguments\": {\n      \"task_id\": \"{{task_id}}\",\n      \"task_input\": {\n        \"customInput\": \"value\"\n      },\n      \"timeout_secs\": 300\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify task asynchronously."
+                    }
+                },
+                {
+                    "name": "Run Task (Sync)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_task_sync\",\n    \"arguments\": {\n      \"task_id\": \"{{task_id}}\",\n      \"task_input\": {\n        \"customInput\": \"value\"\n      },\n      \"timeout_secs\": 300\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify task synchronously and return results."
+                    }
+                },
+                {
+                    "name": "Run Task with Dataset",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"run_task_sync_get_dataset\",\n    \"arguments\": {\n      \"task_id\": \"{{task_id}}\",\n      \"task_input\": {\n        \"customInput\": \"value\"\n      },\n      \"timeout_secs\": 300,\n      \"limit\": 10\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Run an Apify task synchronously and return dataset items."
+                    }
+                },
+                {
+                    "name": "Get Task Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_task\",\n    \"arguments\": {\n      \"task_id\": \"{{task_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get information about a specific task."
+                    }
+                },
+                {
+                    "name": "Get Last Task Run",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_last_task_run\",\n    \"arguments\": {\n      \"task_id\": \"{{task_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get the last run of a specific task."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "📊 Datasets - Data Storage",
+            "item": [
+                {
+                    "name": "List Datasets",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_datasets\",\n    \"arguments\": {\n      \"limit\": 20,\n      \"offset\": 0\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "List all datasets with pagination."
+                    }
+                },
+                {
+                    "name": "Get Dataset Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_dataset\",\n    \"arguments\": {\n      \"dataset_id\": \"{{dataset_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get information about a specific dataset."
+                    }
+                },
+                {
+                    "name": "Get Dataset Items",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_dataset_items\",\n    \"arguments\": {\n      \"dataset_id\": \"{{dataset_id}}\",\n      \"limit\": 10,\n      \"offset\": 0,\n      \"clean\": false,\n      \"format_type\": \"json\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get items from a dataset with pagination and formatting options."
+                    }
+                },
+                {
+                    "name": "Get Dataset Stats",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_dataset_stats\",\n    \"arguments\": {\n      \"dataset_id\": \"{{dataset_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get statistics for a specific dataset."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "🔑 Key-Value Stores",
+            "item": [
+                {
+                    "name": "List Key-Value Stores",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_key_value_stores\",\n    \"arguments\": {\n      \"limit\": 20,\n      \"offset\": 0\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "List all key-value stores with pagination."
+                    }
+                },
+                {
+                    "name": "Get Key-Value Store Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_key_value_store\",\n    \"arguments\": {\n      \"store_id\": \"{{store_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get information about a specific key-value store."
+                    }
+                },
+                {
+                    "name": "Get Key-Value Record",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_key_value_record\",\n    \"arguments\": {\n      \"store_id\": \"{{store_id}}\",\n      \"key\": \"{{record_key}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get a specific record from a key-value store."
+                    }
+                },
+                {
+                    "name": "Store Key-Value Record",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"store_key_value_record\",\n    \"arguments\": {\n      \"store_id\": \"{{store_id}}\",\n      \"key\": \"{{record_key}}\",\n      \"value\": {\n        \"data\": \"example value\",\n        \"timestamp\": \"2024-01-01T00:00:00Z\"\n      },\n      \"content_type\": \"application/json\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Store a record in a key-value store."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "📝 Logs & Monitoring",
+            "item": [
+                {
+                    "name": "Get Run Log",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_run_log\",\n    \"arguments\": {\n      \"run_id\": \"{{run_id}}\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get the log output from a specific run."
+                    }
+                },
+                {
+                    "name": "Get Account Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"get_account_info\",\n    \"arguments\": {}\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/call",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "call"
+                            ]
+                        },
+                        "description": "Get information about the current Apify account."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "🔗 Resources",
+            "item": [
+                {
+                    "name": "Get Actor Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"resources/read\",\n  \"params\": {\n    \"uri\": \"actor://apify/instagram-scraper\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/resources/read",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "resources",
+                                "read"
+                            ]
+                        },
+                        "description": "Get information about a specific actor as a resource."
+                    }
+                },
+                {
+                    "name": "Get Task Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"resources/read\",\n  \"params\": {\n    \"uri\": \"task://{{task_id}}\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/resources/read",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "resources",
+                                "read"
+                            ]
+                        },
+                        "description": "Get information about a specific task as a resource."
+                    }
+                },
+                {
+                    "name": "Get Dataset Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"resources/read\",\n  \"params\": {\n    \"uri\": \"dataset://{{dataset_id}}\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/resources/read",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "resources",
+                                "read"
+                            ]
+                        },
+                        "description": "Get information about a specific dataset as a resource."
+                    }
+                },
+                {
+                    "name": "Get Run Info",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"resources/read\",\n  \"params\": {\n    \"uri\": \"run://{{run_id}}\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/resources/read",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "resources",
+                                "read"
+                            ]
+                        },
+                        "description": "Get information about a specific run as a resource."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "🛠️ MCP Protocol",
+            "item": [
+                {
+                    "name": "List Tools",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/list\",\n  \"params\": {}\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/tools/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "tools",
+                                "list"
+                            ]
+                        },
+                        "description": "List all available tools in the MCP server."
+                    }
+                },
+                {
+                    "name": "List Resources",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"resources/list\",\n  \"params\": {}\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/resources/list",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "resources",
+                                "list"
+                            ]
+                        },
+                        "description": "List all available resources in the MCP server."
+                    }
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "// Set default values for variables if not already set",
+                    "if (!pm.environment.get('base_url')) {",
+                    "    pm.environment.set('base_url', 'http://localhost:8000');",
+                    "}",
+                    "",
+                    "// Generate a unique request ID if not present",
+                    "if (!pm.environment.get('request_id')) {",
+                    "    pm.environment.set('request_id', Date.now().toString());",
+                    "}",
+                    "",
+                    "// Update the JSON-RPC ID with the request ID",
+                    "const body = pm.request.body;",
+                    "if (body && body.mode === 'raw') {",
+                    "    try {",
+                    "        const jsonBody = JSON.parse(body.raw);",
+                    "        jsonBody.id = parseInt(pm.environment.get('request_id'));",
+                    "        body.raw = JSON.stringify(jsonBody, null, 2);",
+                    "    } catch (e) {",
+                    "        console.log('Error updating request ID:', e);",
+                    "    }",
+                    "}"
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "// Test response structure",
+                    "pm.test('Response is JSON', function () {",
+                    "    pm.response.to.have.jsonBody();",
+                    "});",
+                    "",
+                    "pm.test('Response has JSON-RPC structure', function () {",
+                    "    const jsonData = pm.response.json();",
+                    "    pm.expect(jsonData).to.have.property('jsonrpc');",
+                    "    pm.expect(jsonData).to.have.property('id');",
+                    "});",
+                    "",
+                    "pm.test('JSON-RPC version is 2.0', function () {",
+                    "    const jsonData = pm.response.json();",
+                    "    pm.expect(jsonData.jsonrpc).to.eql('2.0');",
+                    "});",
+                    "",
+                    "// Test for success or error response",
+                    "if (pm.response.json().result) {",
+                    "    pm.test('Request was successful', function () {",
+                    "        pm.expect(pm.response.json().result).to.not.be.null;",
+                    "    });",
+                    "} else if (pm.response.json().error) {",
+                    "    pm.test('Request had an error', function () {",
+                    "        const error = pm.response.json().error;",
+                    "        pm.expect(error).to.have.property('code');",
+                    "        pm.expect(error).to.have.property('message');",
+                    "    });",
+                    "}"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000",
+            "type": "string",
+            "description": "Base URL for the Apify MCP server"
+        },
+        {
+            "key": "run_id",
+            "value": "",
+            "type": "string",
+            "description": "ID of a specific actor run"
+        },
+        {
+            "key": "task_id",
+            "value": "",
+            "type": "string",
+            "description": "ID of a specific task"
+        },
+        {
+            "key": "dataset_id",
+            "value": "",
+            "type": "string",
+            "description": "ID of a specific dataset"
+        },
+        {
+            "key": "store_id",
+            "value": "",
+            "type": "string",
+            "description": "ID of a specific key-value store"
+        },
+        {
+            "key": "record_key",
+            "value": "example_key",
+            "type": "string",
+            "description": "Key for a key-value record"
+        },
+        {
+            "key": "request_id",
+            "value": "",
+            "type": "string",
+            "description": "Unique request ID for JSON-RPC calls"
+        }
+    ]
+}

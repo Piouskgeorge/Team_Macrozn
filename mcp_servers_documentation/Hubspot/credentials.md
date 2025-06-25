@@ -9,7 +9,7 @@ This document provides instructions on structuring the credentials needed to con
 ```json
 {
   "HUBSPOT": {
-    "access_token": "your-hubspot-access-token"
+    "access_token": "pat-na2-090aa37b-a868-47ff-a223-0af893d7f26f"
   },
   "AZURE_OPENAI": {
     "endpoint": "https://your-endpoint.openai.azure.com/",

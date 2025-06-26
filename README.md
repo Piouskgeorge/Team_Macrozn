@@ -1,4 +1,4 @@
-# 🚀 MCP Servers Collection
+# 🚀 Team Macrozn (100)
 
 A comprehensive collection of **Model Context Protocol (MCP)** servers designed to seamlessly integrate AI assistants with external services and APIs. This repository contains Python-based MCP servers for various platforms, enabling **natural language interaction** with standardized interfaces.
 
@@ -38,6 +38,7 @@ A comprehensive collection of **Model Context Protocol (MCP)** servers designed 
 | Garak      | LLM vulnerability scanning and safety eval.   | ✅ Active | Python   |
 | Glif.app   | Workflow automation and execution             | ✅ Active | Python   |
 | HubSpot    | CRM, deals, contacts, marketing automation    | ✅ Active | Python   |
+| Hunter.io  | Email lookup, verification, lead generation   | ✅ Active | Python   |
 
 ---
 
